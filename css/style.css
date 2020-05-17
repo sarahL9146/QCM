@@ -23,11 +23,15 @@ body{
 
 
 #cadre{
+	margin-top: 50px;
+	text-align: left;
+}
+
+#accueil{
 	text-align: center;
-	margin-top: 80px;
+	margin-top: 50px;
 }
 #cadre2{
-	background-color: whitesmoke;
 	border: thick double #32a1ce;
 }
 img{
@@ -50,9 +54,6 @@ label{
 	text-align: right;
 }
 
-
-
-
 .flotte {
 	float:left;
 	}
@@ -72,5 +73,9 @@ label{
   }
 .title{
 	font-weight: bold;
+	text-align: center;
+}
+
+#bouton{
 	text-align: center;
 }

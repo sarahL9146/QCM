@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Accueil QCM </title>
+  <title>Accueil QCM Etudiant </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
-<body>
 
+<body>
   <div class="container">
+    <div id="logo">
+      <br />
       <div class="row justify-content-center">
         <div class="col-sm-1">
-        <br />
           <img src="img/itic.png">
         </div>
         <div class="col-sm-11">
-        <br />
-          <h1> Veuillez sélectionner un sujet ou en crée un nouveau </h1>
+          <h4> Veuillez sélectionner un sujet  </h4>
         </div>
-      <div id="accueil">
-      <br /><br /><br />
-        <a href="nouveauform.php"> <button type="button" class="btn btn-secondary btn-lg">Créer un nouveau sujet</button></a>
-        <br /><br /><br />
-
+      </div>
+      <div id="cadre">
       </div>
       <?php
 
-
-
       /******************************************CONNEXION SQL avec PDO ***********************************************/
-
       require_once('connect.php');
+
       $query = "SELECT * FROM qcm";
       $liste = $con->query($query);
 
@@ -52,22 +49,20 @@
         echo "<br/>";
         echo "<p class='title'name='idqcm' id='idqcm'>" . $donnees['TITREQCM'] . "</p>";
         echo " &nbsp";
-        echo "<center>";    
-        echo "<a class='button' href='index.php?idqcm1=".$donnees['IDQCM'] ."&titreqcm=" . $donnees['TITREQCM'] ."'>Ajouter Question</a>";
-        echo " &nbsp";
-        echo "<a class='button' href='export.php?idqcm1=".$donnees['IDQCM'] ."&titreqcm=" . $donnees['TITREQCM'] ."'>Fichier Word Question </a>";
-        echo " &nbsp";
-
-        //echo "<a class='button' href='''>Fichier Excel</a>";
+        echo "<center>";
+        echo "<a class='button' href='qcmetud.php?idqcm1=".$donnees['IDQCM'] ."&titreqcm=" . $donnees['TITREQCM'] ."''>Faire le Questionnaire </a>";
         echo "</center>";
 
         echo "<br/>";
-        echo "<br/>";
         echo "</div>";
+
         echo "<br/>";
         echo "</div>";
         echo "</div>";
       }
+
+
+ 
       $con = null;
       ?>
     </div>
