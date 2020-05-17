@@ -79,3 +79,18 @@ label{
 #bouton{
 	text-align: center;
 }
+
+table
+{
+  border-collapse: collapse;
+}
+
+td, th /* Mettre une bordure sur les td ET les th */
+{
+  border: 2px solid white;
+  height: 20px;
+}
+
+#rep{
+	text-align: center;
+}
